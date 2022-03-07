@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Doc</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <style>
         * {
             margin: 0%;
@@ -61,10 +62,12 @@
             color: #9cd4f7;
             padding-bottom: 12px;
         }
+        .links a:hover{
+            border-bottom: 4px solid #9cd4f7;
+        }
 
-        .header links li a.active,
-        a:hover {
-            border-bottom: 4px #9cd4f7 solid;
+        .links a.active{
+            border-bottom: 4px solid #9cd4f7;
         }
 
         .sidebar {
@@ -80,7 +83,7 @@
 
         }
 
-        .menu li a {
+        .menu ul a {
             text-decoration: none;
             color: #9cd4f7;
             font-size: 16px;
@@ -90,19 +93,22 @@
             
         }
 
-        .menu ul li {
+        .menu ol ul {
             list-style: none;
             line-height: 50px;
             
         }
 
-        .menu ul ul {
+        .menu ol ol {
             position: static;
-            display: none;
             
+            display: none; 
+        }
+        .menu ol ul:hover > ol{
+            display: block;
         }
 
-        .menu ul ul li {
+        .menu ol ol ul {
             border-bottom: none;
             
         }
@@ -120,8 +126,33 @@
             margin-left: 0vh;
             color: white;   
         }
-       
-        
+        .menu a:hover{
+
+            background: #031f30;
+        }
+       @media (min-width){
+        .header{
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+       }
+       @media (min-width: 600px){
+        p{
+            font-size: 1.25rem;
+        }
+       }
+       @media (min-width: 800px){
+           body{
+               font-size: 1.25rem;
+               line-height: 1.5;
+           }
+       }
+       @media (min-width: 600px){
+           .sidebar{
+               font-size: 1.2rem;
+               line-height: 1.5;
+           }
+       }
     </style>
 </head>
 
@@ -138,7 +169,7 @@
         <div class="links">
             <ul>
                 <li><a href="#">Home</a></li>
-                <li class="active"><a href="#">Guides</a></li>
+                <li><a class="active" href="#">Guides</a></li>
                 <li><a href="#">Manuals</a></li>
                 <li><a href="#">References</a></li>
             </ul>
@@ -146,19 +177,19 @@
     </div>
     <div class="sidebar">
         <div class="menu">
-            <ul>
-                <li><a href="#">HTML overview</a></li>
-                <li><a href="#">Get HTML</a></li>
-                <li>
+            <ol>
+                <ul><a href="#">HTML overview</a></ul>
+                <ul><a href="#">Get HTML</a></ul>
+                <ul>
                     <a href="#">Get Started</a>
-                    <span class="fas fa-caret-down"></span>
-                    <ul>
-                        <li><a href="#">part1:Getting Started</a></li>
-                        <li><a href="#">part1:Getting Started</a></li>
-                        <li><a href="#">part1:Getting Started</a></li>
-                    </ul>
+                    <i class="fas fa-caret-down"></i>
+                    <ol>
+                        <ul><a href="#">part1:Getting Started</a><ul>
+                        <ul><a href="#">part1:Getting Started</a></ul>
+                        <ul><a href="#">part1:Getting Started</a></ul>
+                    </ol>
                 </li>
-            </ul>
+            </ol>
         </div>
     </div>
     <div class="container">
@@ -178,13 +209,9 @@
                 leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
                 with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
                 publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-        </div>
-       
+        </div>   
     </div>
     
-    
-    
-
 </body>
 
 </html>
